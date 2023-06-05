@@ -1,0 +1,30 @@
+{
+  "name": "expressassignment",
+  "version": "0.0.1",
+  "description": "HSB assignment - CRUD and AUTH using express.js",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mwww/expressAssignment.git"
+  },
+  "author": "mwww",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/mwww/expressAssignment/issues"
+  },
+  "homepage": "https://github.com/mwww/expressAssignment#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^7.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
