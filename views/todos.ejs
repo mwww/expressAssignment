@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Profile</title>
+  </head>
+  <body>
+    <h1>Welcome, <%= user.username %>!</h1>
+    <p>you have <%= todos.incomplete.length %> todos!</p>
+
+    <table>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>actions</th>
+      </tr>
+      <% for(let i = 0; i < todos.incomplete.length; i++) { %>
+      <tr>
+        <td><%= i %></td>
+        <td><%= todos.incomplete[i].title %></td>
+        <td><%= todos.incomplete[i].description %></td>
+        <td><a href="/todo/mad?id=<%= todos.incomplete[i]._id %>">Done!</a></td>
+      </tr>
+      <% } %>
+    </table>
+  </body>
+</html>
