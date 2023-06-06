@@ -2,25 +2,54 @@
 <html>
   <head>
     <title>Signup</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    <style>
+      main,
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      a {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
-    <h1>Signup</h1>
-    <% if (error === 'already exist') { %>
-    <p>
-      Username already exists. you can login
-      <a href="/auth/login/">here</a> instead.
-    </p>
-    <% } else { %>
-    <p><%= error %></p>
-    <% } %>
-    <form method="POST" action="/signup">
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" required />
-      <br />
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required />
-      <br />
-      <input type="submit" value="Signup" />
-    </form>
+    <main>
+      <h1>Signup</h1>
+      <% if (typeof error !== 'undefined') {%> <% if (error === 'already exist')
+      { %>
+      <p>
+        Username already exists. you can login
+        <a href="/auth/login/">here</a> instead.
+      </p>
+      <% } else { %>
+      <p><%= error %></p>
+      <% } %> <% } %>
+      <form method="POST" action="/auth/signup">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          required
+          placeholder="kang ayam"
+        />
+        <br />
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          placeholder="******"
+        />
+        <br />
+        <!-- <input type="submit" value="Signup" /> -->
+        <button type="submit">Signup</button>
+      </form>
+      <p>Already have an account? <a href="/auth/login">Login Now!</a></p>
+    </main>
   </body>
 </html>

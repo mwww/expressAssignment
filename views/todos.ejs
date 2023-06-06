@@ -1,26 +1,64 @@
 <html>
   <head>
     <title>Profile</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    <style>
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      main > div,
+      main > div > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      tbody,
+      th,
+      td {
+        border: 1px solid var(--clr-grey);
+        padding: 2.5px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Welcome, <%= user.username %>!</h1>
-    <p>you have <%= todos.incomplete.length %> todos!</p>
-    <a href="add/">Add New To-do</a>
-    <table>
-      <tr>
-        <th>#</th>
-        <th>Title</th>
-        <th>Description</th>
-        <th>actions</th>
-      </tr>
-      <% for(let i = 0; i < todos.incomplete.length; i++) { %>
-      <tr>
-        <td><%= i %></td>
-        <td><%= todos.incomplete[i].title %></td>
-        <td><%= todos.incomplete[i].description %></td>
-        <td><a href="/todo/mad?id=<%= todos.incomplete[i]._id %>">Done!</a></td>
-      </tr>
+    <main>
+      <div>
+        <!-- <h1>Welcome, <%= user.username %>!</h1> -->
+        <h1>Welcome!</h1>
+        <div>
+          <p>you have <%= todos.incomplete.length %> todos!</p>
+          <a href="/todo/add/"><button>Add</button></a>
+        </div>
+      </div>
+      <% if(todos.incomplete.length > 0) {%>
+      <table>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+        <% for(let i = 0; i < todos.incomplete.length; i++) { %>
+        <tr>
+          <td><%= i %></td>
+          <td><%= todos.incomplete[i].title %></td>
+          <td><%= todos.incomplete[i].description %></td>
+          <td>
+            <a href="/todo/mad?id=<%= todos.incomplete[i]._id %>">✅</a>
+          </td>
+        </tr>
+        <% } %>
+      </table>
+      <% } else { %>
+      <p>You don't have any To-Do!</p>
       <% } %>
-    </table>
+    </main>
   </body>
 </html>
