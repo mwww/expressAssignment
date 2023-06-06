@@ -8,6 +8,10 @@ router.get('/signup', (req, res) => {
 })
 
 router.post('/signup', async (req, res) => {
+  if (req.session.user) {
+    // return res.redirect('/auth/profile')
+    return res.redirect('/todo')
+  }
   const { username, password } = req.body
 
   try {
@@ -22,7 +26,7 @@ router.post('/signup', async (req, res) => {
     await newUser.save()
 
     req.session.user = newUser
-    res.redirect('/auth/profile')
+    res.redirect('/auth/todo')
   } catch (err) {
     console.error('Error signing up:', err)
     res.render('signup', { error: 'An error occurred' })
@@ -31,7 +35,8 @@ router.post('/signup', async (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.user) {
-    return res.redirect('/auth/profile')
+    // return res.redirect('/auth/profile')
+    return res.redirect('/todo')
   }
   res.render('login')
 })
