@@ -1,6 +1,7 @@
 :root {
   --clr-main: #bbbbbb;
   --clr-main-bg: #202020;
+  --clr-grey: #696969;
 }
 
 *,
@@ -15,6 +16,7 @@
 
   font-size: 1em;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: left;
 }
 
 body {
@@ -28,7 +30,6 @@ body {
 
 main {
   min-width: 500px;
-  min-height: 1000px;
 }
 
 @media screen and (max-width: 600px) {
@@ -37,13 +38,21 @@ main {
   }
 }
 
+button {
+  cursor: pointer;
+  text-align: center;
+}
+button:hover {
+  background-color: #252525;
+}
+
 button,
 input,
 textarea {
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   background-color: var(--clr-main-bg);
 
-  border: 1px solid #696969;
+  border: 1px solid var(--clr-grey);
   border-radius: 10px;
 }
 
@@ -53,4 +62,8 @@ input:focus {
 
 h1 {
   font-size: 1.75rem;
+}
+
+a {
+  text-decoration: none;
 }
