@@ -1,0 +1,56 @@
+:root {
+  --clr-main: #bbbbbb;
+  --clr-main-bg: #202020;
+}
+
+*,
+*::before,
+*::after {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: none;
+
+  color: var(--clr-main);
+
+  font-size: 1em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 25px;
+
+  background-color: var(--clr-main-bg);
+}
+
+main {
+  min-width: 500px;
+  min-height: 1000px;
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    min-width: 100%;
+  }
+}
+
+button,
+input,
+textarea {
+  padding: 0.5rem;
+  background-color: var(--clr-main-bg);
+
+  border: 1px solid #696969;
+  border-radius: 10px;
+}
+
+input:focus {
+  outline: 1px solid white;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
