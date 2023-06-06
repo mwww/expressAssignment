@@ -10,6 +10,9 @@
         flex-direction: column;
         gap: 10px;
       }
+      a {
+        text-decoration: underline;
+      }
     </style>
   </head>
   <body>
@@ -37,8 +40,12 @@
           placeholder="******"
         />
         <br />
-        <input type="submit" value="Login" />
+        <!-- <input type="submit" value="Login" /> -->
+        <button type="submit">Login</button>
       </form>
+      <p>
+        Don't yet have an account? <a href="/auth/signup">Create One Now!</a>
+      </p>
     </main>
   </body>
 </html>
