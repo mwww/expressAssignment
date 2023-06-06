@@ -27,6 +27,7 @@ mongoose
 app.use('/', require('./routes/index'))
 app.use('/auth', require('./routes/auth'))
 app.use('/todo', require('./routes/todos'))
+app.use(express.static('public'))
 
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`)
